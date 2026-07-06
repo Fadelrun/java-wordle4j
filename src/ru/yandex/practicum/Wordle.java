@@ -31,7 +31,7 @@ public class Wordle {
                         String hint = game.getWordHint();
                         System.out.println("Подсказка: " + hint);
                         log.println("Подсказка: " + hint);
-                    }else{
+                    } else {
                         String result = game.makeTurn(input);
                         System.out.println(result);
                         log.println("Ход: " + input.trim() + " -> " + result);
