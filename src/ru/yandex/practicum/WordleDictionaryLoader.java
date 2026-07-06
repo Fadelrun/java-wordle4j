@@ -10,7 +10,7 @@ import java.util.List;
 
 
 public class WordleDictionaryLoader {
-    public static WordleDictionary load(String fileName){
+    public static WordleDictionary load(String fileName) {
         List<String> rawWords = new ArrayList<>();
 
         try (BufferedReader reader = new BufferedReader(new InputStreamReader(new FileInputStream(fileName), StandardCharsets.UTF_8))) {
