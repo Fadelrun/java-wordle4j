@@ -6,6 +6,7 @@ import java.util.List;
 import java.util.Set;
 
 public class WordleGame {
+    private static final int WORD_LENGTH = 5;
     private WordleDictionary dictionary;
     private String secretWord;
     private int remainingAttempts;
@@ -74,10 +75,10 @@ public class WordleGame {
     }
 
     private String buildHint(String guess, String answer) {
-        char[] result = new char[5];
-        boolean[] userInAnswer = new boolean[5];
+        char[] result = new char[WORD_LENGTH];
+        boolean[] userInAnswer = new boolean[WORD_LENGTH];
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < WORD_LENGTH; i++) {
             if (guess.charAt(i) == answer.charAt(i)) {
                 result[i] = '+';
                 userInAnswer[i] = true;
@@ -86,7 +87,7 @@ public class WordleGame {
             }
         }
 
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < WORD_LENGTH; i++) {
             if (result[i] == ' ') {
                 char c = guess.charAt(i);
                 int pos = findCharInAnswer(c, answer, userInAnswer);
